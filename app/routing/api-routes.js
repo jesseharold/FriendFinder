@@ -20,5 +20,8 @@ exports.addFriend = function(req, res) {
   newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
   console.log("added", newFriend);
   friends.push(newFriend);
+  // add compatibility logic here, respond with the compatible friend
   res.json(newFriend);
+  // display match as a modal popup
+  // save array to a file in the data folder
 };

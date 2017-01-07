@@ -1,6 +1,16 @@
 #Week of 13 HW: Friend Finder - Node and Express Servers
-##Overview
 
+##TO DO:
+    * add HTML for survey form and index page
+    * save array to file in data folder
+    * test post route
+    * add compatibility logic
+    * display compatible friend
+    * make home html default route
+    * add styles
+    * deploy to heroku
+
+##Overview
 In this activity, you'll build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
 You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
@@ -29,16 +39,7 @@ Check out [this demo version of the site]](https://friend-finder.herokuapp.com/)
       "name":"Ahmed",
       "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
       "scores":[
-         5,
-         1,
-         4,
-         4,
-         5,
-         1,
-         2,
-         5,
-         4,
-         1
+          ...
        ]
     }
 
