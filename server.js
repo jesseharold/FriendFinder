@@ -13,14 +13,13 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //--------------- ROUTES -----------------------
+app.get("/", htmlRoutes.home);
+app.get("/survey", htmlRoutes.survey);
 
 app.get("/api/friends", apiRoutes.getFriends);
-
 app.post("/api/friends", apiRoutes.addFriend);
 
-app.get("/", htmlRoutes.defaut);
-
-app.get("/survey", htmlRoutes.survey);
+app.get('*', htmlRoutes.catchAll);
 
 
 // Starts the server to begin listening

@@ -1,12 +1,8 @@
 #Week of 13 HW: Friend Finder - Node and Express Servers
 
 ##TO DO:
-    * add HTML for survey form and index page
-    * save array to file in data folder
-    * test post route
-    * add compatibility logic
+    * test compatibility logic
     * display compatible friend
-    * make home html default route
     * add styles
     * deploy to heroku
 

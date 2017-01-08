@@ -1,27 +1,67 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var fs = require("fs");
 
-var friends = [
-    {
-    "name":"test",
-    "routeName": "test",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    "scores":[5,1,4,4,5,1,2,5,4,1]
-    }
-];
+var friends = [];
 
-exports.getFriends = function(req, res) {
-    res.json(friends);
-};
+function getFriends(request, response) {
+    getLocalData(function(){
+        response.json(friends);
+    });
+}
 
-exports.addFriend = function(req, res) {
-  var newFriend = req.body;
+function addFriend(request, response) {
+  var newFriend = request.body;
   newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-  console.log("added", newFriend);
+  var match = findMatch(newFriend, friends);
   friends.push(newFriend);
-  // add compatibility logic here, respond with the compatible friend
-  res.json(newFriend);
-  // display match as a modal popup
-  // save array to a file in the data folder
+  saveData();
+  // write data to data file
+  response.json(match);
+}
+
+function findMatch(user, existingUsers){
+    var bestCompatibility;
+    var bestMatchIndex;
+    for (var i = 0; i < existingUsers.length; i++){
+        var compatibility = compare(user, existingUsers[i]);
+        if (compatibility < bestCompatibility){
+            bestCompatibility = compatibility;
+            bestMatchIndex = i;
+        }
+    }
+    return existingUsers[bestMatchIndex];
+}
+
+// ---- private functions -----
+function compare(user1, user2){
+    var difference = 0;
+    for (i = 0; i < user1.length; i++){
+        difference += Math.abs(user1[i]-user2[i]);
+    }
+    return difference;
+}
+
+function saveData(){
+    fs.writeFile("app/data/friends.txt", JSON.stringify(friends), "utf8", function(){
+        //console.log("wrote data to file");
+    });
+}
+
+function getLocalData(callback){
+    fs.readFile("app/data/friends.txt", "utf8", function(err, data){
+        if (err){
+            console.log("error", err);
+        } else {
+            console.log("read data from file", data);
+            friends = JSON.parse(data);
+            callback();
+        }
+    });
+}
+
+module.exports = {
+    addFriend: addFriend,
+    getFriends: getFriends
 };

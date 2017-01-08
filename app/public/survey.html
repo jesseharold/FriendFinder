@@ -14,6 +14,118 @@
 <body>
 	<div class="container">
         <h1>Friend Finder Survey</h1>
+        <form>
+            Full name:
+            <input type="text" id="name" />
+            <br><br>
+            Link to your photo:
+            <input type="text" id="photo" />
+            <br><br>
+            Question1
+            <input type="radio" name="question1" value="1" />
+            <input type="radio" name="question1" value="2" />
+            <input type="radio" name="question1" value="3" />
+            <input type="radio" name="question1" value="4" />
+            <input type="radio" name="question1" value="5" />
+            <br><br>
+            Question2
+            <input type="radio" name="question2" value="1" />
+            <input type="radio" name="question2" value="2" />
+            <input type="radio" name="question2" value="3" />
+            <input type="radio" name="question2" value="4" />
+            <input type="radio" name="question2" value="5" />
+            <br><br>
+            Question3
+            <input type="radio" name="question3" value="1" />
+            <input type="radio" name="question3" value="2" />
+            <input type="radio" name="question3" value="3" />
+            <input type="radio" name="question3" value="4" />
+            <input type="radio" name="question3" value="5" />
+            <br><br>
+            Question4
+            <input type="radio" name="question4" value="1" />
+            <input type="radio" name="question4" value="2" />
+            <input type="radio" name="question4" value="3" />
+            <input type="radio" name="question4" value="4" />
+            <input type="radio" name="question4" value="5" />
+            <br><br>
+            Question5
+            <input type="radio" name="question5" value="1" />
+            <input type="radio" name="question5" value="2" />
+            <input type="radio" name="question5" value="3" />
+            <input type="radio" name="question5" value="4" />
+            <input type="radio" name="question5" value="5" />
+            <br><br>
+            Question6
+            <input type="radio" name="question6" value="1" />
+            <input type="radio" name="question6" value="2" />
+            <input type="radio" name="question6" value="3" />
+            <input type="radio" name="question6" value="4" />
+            <input type="radio" name="question6" value="5" />
+            <br><br>
+            Question7
+            <input type="radio" name="question7" value="1" />
+            <input type="radio" name="question7" value="2" />
+            <input type="radio" name="question7" value="3" />
+            <input type="radio" name="question7" value="4" />
+            <input type="radio" name="question7" value="5" />
+            <br><br>
+            Question8
+            <input type="radio" name="question8" value="1" />
+            <input type="radio" name="question8" value="2" />
+            <input type="radio" name="question8" value="3" />
+            <input type="radio" name="question8" value="4" />
+            <input type="radio" name="question8" value="5" />
+            <br><br>
+            Question9
+            <input type="radio" name="question9" value="1" />
+            <input type="radio" name="question9" value="2" />
+            <input type="radio" name="question9" value="3" />
+            <input type="radio" name="question9" value="4" />
+            <input type="radio" name="question9" value="5" />
+            <br><br>
+            Question10
+            <input type="radio" name="question10" value="1" />
+            <input type="radio" name="question10" value="2" />
+            <input type="radio" name="question10" value="3" />
+            <input type="radio" name="question10" value="4" />
+            <input type="radio" name="question10" value="5" />
+            <br><br>
+        </form>
+        <button id="submit">Submit</button>
     </div>
+    <script lang="js">
+        $("#submit").click(function(){
+            var answers = [];
+            var name = $("#name").val();
+            var photo = $("#photo").val()
+            if (!name || !photo){
+                alert("Please fill in all information to continue");
+            } else {
+                for (var i = 1; i < 11; i++){
+                    answers.push($("input[name=question" + i + "]:checked").val());
+                }
+                if (answers < 10){
+                    alert("Please answer all survey question to continue.");
+                } else {
+                    var userData = {
+                        "name": name,
+                        "photo": photo,
+                        "scores": answers
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/friends",
+                        data: userData,
+                        success: function(){
+                            console.log("new user posted");
+                        }
+                    }).done(function(data){
+                        console.log("DONE");
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>
