@@ -3,7 +3,9 @@
 ##TO DO:
     * test compatibility logic
     * display compatible friend
+    * write questions
     * add styles
+    * clean up data
     * deploy to heroku
 
 ##Overview

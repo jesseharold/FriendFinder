@@ -28,8 +28,9 @@ $("#submit").click(function(){
     }
 });
 function showFriend(name, photo){
+    console.log("showFriend", name, photo);
     var resultsCode = "Your most compatible friend match is";
     resultsCode += "<div class='friendName'>" + name + "</div>";
     resultsCode += "<img src='" + photo + "' alt='" + name + "' class='friendImage'>";
-    $(".modalContent").html(resultsCode);
+    $(".modalContent").html(resultsCode).show();
 }
