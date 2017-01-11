@@ -12,18 +12,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+//--------------- ROUTES -----------------------
 // for serving static files (css, external js)
 app.use("/static/", express.static(path.join(__dirname, "app/public")));
-
-//--------------- ROUTES -----------------------
-app.get("/", htmlRoutes.home);
 app.get("/survey", htmlRoutes.survey);
 
 app.get("/api/friends", apiRoutes.getFriends);
 app.post("/api/friends", apiRoutes.addFriend);
 
-//app.get('*', htmlRoutes.catchAll);
-
+// default
+app.use(htmlRoutes.home);
 
 // Starts the server to begin listening
 // =============================================================

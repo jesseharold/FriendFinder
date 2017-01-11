@@ -20,16 +20,16 @@ function addFriend(request, response) {
     saveData();
     // write data to data file
     response.json(friends[match]);
-    console.log("best match is: ", friends[match]);
+    //console.log("best match is: ", friends[match]);
 }
 
 function findMatch(user){
     var bestCompatibility = 100;
     var bestMatchIndex;
-    console.log("checking "+ friends.length + " possible friends...");
+    //console.log("checking "+ friends.length + " possible friends...");
     for (var i = 0; i < friends.length; i++){
         var compatibility = compare(user, friends[i]);
-        console.log("compat: ", compatibility);
+        //console.log("compat: ", compatibility);
         if (compatibility < bestCompatibility){
             bestCompatibility = compatibility;
             bestMatchIndex = i;
