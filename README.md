@@ -1,7 +1,6 @@
 #Week of 13 HW: Friend Finder - Node and Express Servers
 
 ##TO DO:
-    * write questions
     * clean up data
     * deploy to heroku
 
