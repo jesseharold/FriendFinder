@@ -2,7 +2,7 @@
 
 ##TO DO:
     * test compatibility logic
-    * display compatible friend - fix error with remote files
+    * display compatible friend
     * write questions
     * clean up data
     * deploy to heroku
