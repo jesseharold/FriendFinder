@@ -2,9 +2,8 @@
 
 ##TO DO:
     * test compatibility logic
-    * display compatible friend
+    * display compatible friend - fix error with remote files
     * write questions
-    * add styles
     * clean up data
     * deploy to heroku
 
