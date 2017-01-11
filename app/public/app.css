@@ -1,8 +1,14 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     background-color: #004000;
     line-height: 24px;
     font-size: 18px;
+}
+h1 {
+    font-family: "Cherry Swash";
+}
+a, a:visited, a:hover, a:active {
+    color: white;
 }
 input[type="radio" i] {
     margin: 2%;
@@ -14,6 +20,14 @@ input[type="radio" i] {
     color: white;
     min-width: 340px;
     padding: 1% 5% 5% 5%;
+}
+footer.container {
+    padding-bottom: 1%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin: 30px auto;
+    opacity: .7;
 }
 .agreeLabel {
     display: inline-block;
