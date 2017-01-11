@@ -22,7 +22,7 @@ $(document).ready(function(){
                     url: "/api/friends",
                     data: userData
                 }).done(function(data){
-                    console.log("DONE");
+                    //console.log("DONE");
                     showFriend(data.name, data.photo);
                 });
             }
@@ -30,13 +30,13 @@ $(document).ready(function(){
     });
 
     $("#modal").on("click", ".closeButton", function(){
-        console.log("CLOSE!");
+        //console.log("CLOSE!");
         $(".modalContent").html("");
         $("#modal").hide();
     });
 
     function showFriend(name, photo){
-        console.log("showFriend", name, photo);
+        //console.log("showFriend", name, photo);
         var resultsCode = "Your most compatible friend match is";
         resultsCode += "<h3 class='friendName'>" + name + "</h3>";
         resultsCode += "<img src='" + photo + "' alt='" + name + "' class='friendImage'>";
