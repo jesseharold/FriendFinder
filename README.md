@@ -1,9 +1,7 @@
 #Week of 13 HW: Friend Finder - Node and Express Servers
 
 ##TO DO:
-    * test compatibility logic
     * write questions
-    * add links to api/survey/close modal
     * clean up data
     * deploy to heroku
 

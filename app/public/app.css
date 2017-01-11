@@ -14,12 +14,16 @@ input[type="radio" i] {
     margin: 2%;
 }
 .container {
+    position: relative;
+    text-align: center;
     width: 80%;
     margin: 10px auto;
     background-color: #1b5996;
     color: white;
-    min-width: 340px;
+    min-width: 375px;
     padding: 1% 5% 5% 5%;
+    font-size: 1.7em;
+    line-height: 2em;
 }
 footer.container {
     padding-bottom: 1%;
@@ -28,6 +32,27 @@ footer.container {
     font-size: 16px;
     margin: 30px auto;
     opacity: .7;
+}
+.navButton {
+position: absolute;
+    display: inline-block;
+    top: 10px;
+    left: 10px;
+    font-size: small;
+    line-height: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    color: lightblue;
+}
+.question {
+    display: block;
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 5% 0;
+    background-color: #00408b;
+    padding: 3%;
+    border-radius: 10px;
 }
 .agreeLabel {
     display: inline-block;
@@ -58,12 +83,12 @@ footer.container {
     left: 0;
     right: 0;
 }
-.modalBG {
+#modal .modalBG {
     background-color: black;
     text-align: center;
     opacity: .6;
 }
-.modalContent {
+#modal .modalContent {
     text-align: center;
     background-color: white;
     color: #1b5996;
@@ -83,6 +108,15 @@ footer.container {
 #modal .friendImage {
     width: 100%;
     margin: 20px 0;
+}
+#modal .closeButton {
+    text-decoration: underline;
+    position: absolute;
+    bottom: 2px;
+    right: 20px;
+    cursor: pointer;
+    font-size: .8em;
+    color: #888;
 }
 h3 {
     font-weight: bold;

@@ -28,11 +28,19 @@ $(document).ready(function(){
             }
         }
     });
+
+    $("#modal").on("click", ".closeButton", function(){
+        console.log("CLOSE!");
+        $(".modalContent").html("");
+        $("#modal").hide();
+    });
+
     function showFriend(name, photo){
         console.log("showFriend", name, photo);
         var resultsCode = "Your most compatible friend match is";
         resultsCode += "<h3 class='friendName'>" + name + "</h3>";
         resultsCode += "<img src='" + photo + "' alt='" + name + "' class='friendImage'>";
+        resultsCode += "<div class='closeButton'>(X) Close</div>";
         $(".modalContent").html(resultsCode);
         $("#modal").show();
     }
