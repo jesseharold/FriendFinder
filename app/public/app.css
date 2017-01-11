@@ -1,11 +1,16 @@
 body {
     font-family: "Open Sans", Arial, sans-serif;
     background-color: #004000;
-    line-height: 24px;
-    font-size: 18px;
+    line-height: 1.5em;
+    font-size: 1em;
 }
 h1 {
     font-family: "Cherry Swash";
+}
+h3 {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 4%;
 }
 a, a:visited, a:hover, a:active {
     color: white;
@@ -17,7 +22,7 @@ input[type="radio" i] {
     position: relative;
     text-align: center;
     width: 80%;
-    margin: 10px auto;
+    margin: 2% auto;
     background-color: #1b5996;
     color: white;
     min-width: 375px;
@@ -29,12 +34,12 @@ footer.container {
     padding-bottom: 1%;
     text-align: center;
     color: white;
-    font-size: 16px;
-    margin: 30px auto;
+    font-size: .8em;
+    margin: 3% auto;
     opacity: .7;
 }
 .navButton {
-position: absolute;
+    position: absolute;
     display: inline-block;
     top: 10px;
     left: 10px;
@@ -58,17 +63,16 @@ position: absolute;
     display: inline-block;
     width: 70px;
     text-align: center;
-    font-size: 14px;
-    line-height: 13px;
+    font-size: .5em;
+    line-height: 100%;
     margin: 1%;
 }
 #submit {
     display: block;
     margin: auto;
-    width: 140px;
-    height: 40px;
+    padding: 1% 3%;
     border-radius: 13px;
-    font-size: 28px;
+    font-size: 1.2em;
     background-color: greenyellow;
     border-color: #004000;
     color: #004000;
@@ -105,10 +109,6 @@ position: absolute;
     width: 100%;
     margin: 20px 0;
 }
-#modal .friendImage {
-    width: 100%;
-    margin: 20px 0;
-}
 #modal .closeButton {
     text-decoration: underline;
     position: absolute;
@@ -117,9 +117,4 @@ position: absolute;
     cursor: pointer;
     font-size: .8em;
     color: #888;
-}
-h3 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-top: 20px;
 }
