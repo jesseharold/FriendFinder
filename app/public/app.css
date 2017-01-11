@@ -64,6 +64,7 @@ footer.container {
     opacity: .6;
 }
 .modalContent {
+    text-align: center;
     background-color: white;
     color: #1b5996;
     z-index: 5;
@@ -74,4 +75,17 @@ footer.container {
     min-height: 150px;
     min-width: 150px;
     border-radius: 20px;
+}
+#modal .friendImage {
+    width: 100%;
+    margin: 20px 0;
+}
+#modal .friendImage {
+    width: 100%;
+    margin: 20px 0;
+}
+h3 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 20px;
 }

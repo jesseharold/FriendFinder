@@ -2,8 +2,8 @@
 
 ##TO DO:
     * test compatibility logic
-    * display compatible friend
     * write questions
+    * add links to api/survey/close modal
     * clean up data
     * deploy to heroku
 
