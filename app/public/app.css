@@ -99,7 +99,7 @@ footer.container {
     z-index: 5;
     position: relative;
     padding: 4%;
-    margin: 10% auto;
+    margin: 4% auto;
     width: 55%;
     min-height: 150px;
     min-width: 150px;
@@ -112,7 +112,7 @@ footer.container {
 #modal .closeButton {
     text-decoration: underline;
     position: absolute;
-    bottom: 2px;
+    top: 2px;
     right: 20px;
     cursor: pointer;
     font-size: .8em;
