@@ -23,27 +23,25 @@ function addFriend(request, response) {
     //console.log("best match is: ", friends[match]);
 }
 
+
 function findMatch(user){
     var bestCompatibility = 100;
-    var bestMatchIndex;
-    //console.log("checking "+ friends.length + " possible friends...");
-    for (var i = 0; i < friends.length; i++){
-        var compatibility = compare(user, friends[i]);
-        //console.log("compat: ", compatibility);
+    var bestMatchIndex = friends.reduce(function(accumulator, currentValue, index){
+        var compatibility = compare(user, currentValue);
         if (compatibility < bestCompatibility){
-            bestCompatibility = compatibility;
-            bestMatchIndex = i;
+            return index;
+        } else {
+            return accumulator;
         }
-    }
+    }, 0);
     return bestMatchIndex;
 }
 
 // ---- private functions -----
 function compare(user1, user2){
-    var difference = 0;
-    for (i = 0; i < user1.scores.length; i++){
-        difference += Math.abs(user1.scores[i]-user2.scores[i]);
-    }
+    var difference = user1.scores.reduce(function(accumulator, currentValue, index){
+        return accumulator + Math.abs(currentValue - user2.scores[index]);
+    }, 0);
     return difference;
 }
 
